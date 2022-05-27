@@ -18,7 +18,7 @@ class MysqlProductTest {
     @Test
     void save() {
 
-        Product product = new Product("lamson", "description", "detail", 10000, "src/image/product.png", "lam@gmail.com", "0123456789");
+        Product product = new Product("lamson2", "description", "detail", 10000, "src/image/product.png", "lam@gmail.com", "0123456789");
         assertEquals(true,productModel.save(product)
 );
     }
@@ -26,4 +26,26 @@ class MysqlProductTest {
     @Test
     void testSave() {
     }
+
+    @Test
+    void update() {
+        Product product = new Product("lamson22222222222", "description", "detail", 10000, "src/image/product.png", "lam@gmail.com", "0123456789");
+        assertEquals(true, productModel.update(1, product));
+    }
+
+    @Test
+    void delete() {
+        assertEquals(true, productModel.delete(1));
+    }
+
+    @Test
+    void findById() {
+        Product product = productModel.findById(3);
+        assertEquals(null, product);
+    }
+
+    @Test
+    void findAll() {
+    }
 }
+
